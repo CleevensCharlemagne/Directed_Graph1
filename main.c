@@ -60,3 +60,20 @@ struct Graph* createGraph(struct Edge edges[], int n)
     return graph;
 }
 
+// Function to print adjacency list representation of a graph
+void printGraph(struct Graph* graph)
+{
+    for (int i = 0; i < N; i++)
+    {
+        // print current vertex and all its neighbors
+        struct Node* ptr = graph->head[i];
+        while (ptr != NULL)
+        {
+            printf("(%d —> %d)\t", i, ptr->dest);
+            ptr = ptr->next;
+        }
+
+        printf("\n");
+    }
+}
+
