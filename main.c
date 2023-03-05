@@ -77,3 +77,26 @@ void printGraph(struct Graph* graph)
     }
 }
 
+
+// Directed graph implementation in C
+int main(void)
+{
+    // input array containing edges of the graph (as per the above diagram)
+    // (x, y) pair in the array represents an edge from x to y
+    struct Edge edges[] =
+    {
+        {0, 1}, {1, 2}, {2, 0}, {2, 1}, {3, 2}, {4, 5}, {5, 4}
+    };
+
+    // calculate the total number of edges
+    int n = sizeof(edges)/sizeof(edges[0]);
+
+    // construct a graph from the given edges
+    struct Graph *graph = createGraph(edges, n);
+
+    // Function to print adjacency list representation of a graph
+    printGraph(graph);
+
+    return 0;
+}
+
