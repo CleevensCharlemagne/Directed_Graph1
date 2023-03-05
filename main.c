@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+// Define the maximum number of vertices in the graph
+#define N 6
+
+// Data structure to store a graph object
+struct Graph
 {
-    printf("Hello world!\n");
-    return 0;
-}
+    // An array of pointers to Node to represent an adjacency list
+    struct Node* head[N];
+};
